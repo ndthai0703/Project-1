@@ -1,0 +1,4 @@
+-r requirements.txt
+ultralytics>=8.3,<9
+scikit-image>=0.24,<1
+segment-anything==1.0

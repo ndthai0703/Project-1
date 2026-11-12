@@ -1,0 +1,9 @@
+device: cpu
+# Limited to the population/anatomy of the published detector.
+supported_scope: pediatric_wrist
+weights: checkpoints/fracture_yolov8.pt
+medsam_weights: checkpoints/medsam_vit_b.pth
+confidence: 0.25
+iou: 0.45
+max_detections: 5
+image_size: 640

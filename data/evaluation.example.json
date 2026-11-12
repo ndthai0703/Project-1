@@ -1,0 +1,11 @@
+[
+  {
+    "image": "YOUR_IMAGE.png",
+    "question": "Ảnh này thể hiện bộ phận nào?",
+    "answers": [
+      "phổi",
+      "lồng ngực"
+    ],
+    "answer_type": "open"
+  }
+]

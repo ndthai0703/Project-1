@@ -1,0 +1,13 @@
+# Smallest option: English questions and answers only.
+model:
+  backend: smolvlm
+  id: HuggingFaceTB/SmolVLM-500M-Instruct
+  device: auto
+  load_in_4bit: false
+  local_files_only: false
+inference:
+  language: en
+  max_new_tokens: 96
+  max_image_side: 512
+  max_upload_mb: 15
+  max_question_chars: 1500

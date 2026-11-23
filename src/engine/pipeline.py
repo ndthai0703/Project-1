@@ -25,10 +25,10 @@ class MedicalVQAPipeline:
         text=self._get_model().generate(image,prompt,c["max_new_tokens"])
         from src.utils.postprocessing import format_answer
         caption = None
-        if task=="both":
-            caption_prompt=make_prompt("","caption",c["language"],c["max_question_chars"])
-            if vision_context: caption_prompt += "\nExternal image analysis (unverified): " + vision_context
-            caption=self._get_model().generate(image,caption_prompt,c["max_new_tokens"]).strip()
+        if task == "both":
+            caption_prompt = make_prompt("", "caption", c["language"], c["max_question_chars"])
+            # Không dán vision_context vào caption_prompt để tránh model từ chối mô tả
+            caption = self._get_model().generate(image, caption_prompt, c["max_new_tokens"]).strip()
         raw=text
         text=format_answer(text,answer_type if task!="caption" else "open",c["language"])
         return {"answer":text,"raw_answer":raw,"caption":text if task=="caption" else caption,"answer_type":answer_type,
